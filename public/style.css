@@ -1,0 +1,14 @@
+/*user login page*/
+body{
+    background-image: url('./assets/shopping-bag-cart_23-2148879372.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.center-div{
+    margin-left: 450px;
+    margin-top: 150px;
+}
+.center-divs{
+    margin-left: 200px;
+    margin-top: 10px;
+}
