@@ -1,0 +1,36 @@
+<%-include('header')-%>
+<h2>Welcome to home </h2>
+<a href="/logout" class="btn btn-success">
+    Log Out
+</a>
+<h3>
+    Hi <%= admin.name %> !
+</h3>
+
+<a href="/admin/dashboard" class="btn btn-success"> dashboard</a>
+<br><br>
+
+<table style="width:50%">
+<tr>
+<td><img src="/userImages/<%=admin.image%>" width="100px" height="100px" alt="<%=admin.image%>"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><%=admin.email%></td>
+</tr>
+<tr>
+<td>address</td>
+<td><%=admin.address%></td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td><%=admin.mobile%></td>
+</tr>
+
+</table>
+<br>
+
+
+
+<%-include('footer')-%>

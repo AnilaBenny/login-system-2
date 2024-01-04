@@ -27,16 +27,10 @@
 </div>
 
 <% if(typeof message !=='undefined'){ %>
-    <p id="display" class="text-success"> <%= message %></p>
+    <p id="display" class="text-success"> <%= message %>
+        <a href="/login">Login to Enter</a>
+    </p>
 <%}%>
-<!--
-<script>
-const message= 
-document.addEventListener('click',()=>{
-    const message = "Your registration has been successfully completed!!! Please verify your email.";
-    document.querySelector('#display').innerHTML=message;
-})
 
-</script> -->
 
 <%-include('footer')-%>

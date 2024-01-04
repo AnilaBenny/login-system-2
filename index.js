@@ -1,21 +1,22 @@
 const express = require('express');
-const user_route=require('./routes/userRoute')
+const user_route=require('./routes/userRoute');
+const admin_route=require('./routes/adminRoute');
+// const noCache=require('noCache');
 
-
-
-
-const app = express();
+const app=express();
 const PORT = 3000;
 
+
 app.set('view engine','ejs');
-app.set('/static',express.static('public'));
-
-
-app.set('/static/assets',express.static('public/assets'));
+app.use('/static',express.static('public'));
 
 //for user routes
 app.use('/',user_route);
+//for admin
+app.use('/admin',admin_route);
+
+
 
 app.listen(PORT, () => {
-  console.log('Server is running on port :http://localhost:3000/signup');
+  console.log('Server is running on port :http://localhost:3000/');
 });

@@ -1,0 +1,28 @@
+<%-include('header')-%>
+<img src="userImages/<%=user.image%>" width="100px" height="100px" alt="<%=user.image%>">
+<br>
+<br>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" class="form-control w-25" name="image">
+    <input type="hidden"  name="user_id" value="<%=user._id%>">
+    <br><br>
+
+    <input type="text" name="name" class="form-control w-25" value="<%=user.name%>" placeholder="Enter name" required>
+    <br><br>
+    <input type="email" name="email" class="form-control w-25" value="<%=user.email%>" placeholder="Enter email" required>
+    <br><br>
+    <input type="text" name="mobile" class="form-control w-25" value="<%=user.mobile%>" placeholder="Enter Mobile number" required>
+    <br><br>
+    <input type="submit" class="btn btn-success p-2 rounded-pill" value="update profile">
+
+
+    <a href="/logout" class="btn btn-success p-2 rounded-pill mt-2">
+        Logout
+    </a>
+
+
+
+</form>
+
+
+<%-include('footer')-%>

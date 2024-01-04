@@ -1,0 +1,31 @@
+<%-include('header')-%>
+<div class="w-25 center-divs">
+    <form action="/admin/new-user" method="POST" enctype="multipart/form-data">
+        
+        <div class="container p-4 form-group">
+            <h2 class="text-center">Add new user</h2>
+       
+        <label class="form-label">Name</label>
+        <input type="text" name="name" placeholder="Enter Your Name"  class="form-control mb-2"required>
+        <label class="form-label">address</label>
+        <input type="text" name="address" placeholder="Enter Your address" class="form-control mb-2"required>
+        <label class="form-label">Mobile Number</label>
+        <input type="text" name="mobile" placeholder="Enter Your mobile number" class="form-control mb-2"required>
+        <label class="form-label">Email</label>
+        <input type="email" name="email" placeholder="Enter Your email address" class="form-control mb-2"required>
+        <label class="form-label">upload photo</label>
+        <input type="file" name="image" placeholder="Upload photo" class="form-control mb-2"required>
+        <button type="submit" class="btn btn-success rounded-pill ps-4 pe-4 pt-2 pb-2 mt-2">
+            ADD
+        </button>
+    </div>
+    </form>
+</div>
+
+<% if(typeof message !=='undefined'){ %>
+    <p id="display" class="text-danger"> <%= message %>
+    </p>
+<%}%>
+<a href="/admin/dashboard" class="btn btn btn-success">GO back</a>
+
+<%-include('footer')-%>
