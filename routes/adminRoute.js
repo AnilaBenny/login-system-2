@@ -49,6 +49,10 @@ admin_route.post('/new-user',upload.single('image'),adminController.addNew);
 
 admin_route.get('/logout',auth.isLogin,adminController.logout);
 
+admin_route.get('/edit-user',adminController.editUser);
+
+admin_route.post('/edit-user',adminController.verify);
+
 admin_route.get('*',function(req,res){
     res.redirect('/admin');
 });

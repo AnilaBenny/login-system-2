@@ -1,0 +1,36 @@
+
+<%- include('header') -%>
+
+<div class="w-25 center-div">
+    <form action="" method="post" >
+        <div class="container p-4 form-group">
+            
+            <h1>Edit user</h1>
+            <input type="text" name="name" placeholder="Enter Your name" value="<%=user.name%>" class="form-control mb-2" required>
+            <br>
+            <br>
+            <input type="email" name="email" placeholder="Enter Your email address" value="<%=user.email%>" class="form-control mb-2" required>
+            <br><br>
+            <input type="text" name="mobile" placeholder="Enter Mobile" value="<%=user.mobile%>" class="form-control mb-2" required>
+            <br>
+            <br>
+
+            <input type="radio" name="verify" value="1" <% if(user.is_varified== 1){%> Checked <%}%>>
+            <label>verified</label>
+            &nbsp;&nbsp;
+            <input type="radio" name="verify" value="0" <% if(user.is_varified== 0){%> Checked <%}%>>
+            <label>Unverified</label>
+            <input type="hidden" name="id" value="<%=user._id%>">
+            <br><br>
+            <button class="btn btn-success rounded-pill ps-4 pe-4 pt-2 pb-2 mt-2">
+                update user
+            </button>
+            <br><br>
+         <a href="/admin/dashboard"> Go dashboard</a>
+           
+        </div>
+    </form>
+</div>
+
+<%- include('footer') -%>
+

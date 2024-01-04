@@ -39,7 +39,7 @@ if(users.length > 0) {
            <% }  else{%>
            <p> verified</p> <%}%>
         </td>
-        <td><a href="/admin/edit-user">Edit</a></td>
+        <td><a href="/admin/edit-user?id=<%=users[i]._id %>" class="btn btn-success">Edit</a></td>
         </tr>
 <%
     }

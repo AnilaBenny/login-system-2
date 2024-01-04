@@ -126,7 +126,33 @@ const loadDashboard = async (req, res) => {
             console.log(error.message)
             
         }
-    }
+    };
+    const editUser=async(req,res)=>{
+        try {
+            const id=req.query.id;
+            const userData=await userModel.findById({_id:id});
+            if(userData){
+            res.render('edit-user',{user:userData});
+            }
+            else{
+                res.redirect('/admin/dashboard');
+            }
+            
+        } catch (error) {
+            console.log(error.message)
+        }
+
+    };
+
+    const verify=async(req,res)=>{
+        try {
+            const userData=await userModel.findByIdAndUpdate({_id:req.body.id},{$set:{ name:req.body.name,email:req.body.email,mobile:req.body.mobile,is_varified:req.body.verify}});
+
+            res.redirect('/admin/dashboard');
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
 module.exports={
     LoadAdmin,
@@ -135,5 +161,7 @@ module.exports={
     logout,
     loadDash,
     addUser,
-    addNew
+    addNew,
+    editUser,
+    verify
 }
