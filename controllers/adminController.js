@@ -154,6 +154,17 @@ const loadDashboard = async (req, res) => {
         }
     };
 
+    const deleteUser=async(req,res)=>{
+        try {
+            const id=req.query.id;
+            const userData=await userModel.deleteOne({_id:id});
+           res.redirect('/admin/dashboard'); 
+        } catch (error) {
+            console.log(error.message);
+        }
+
+    };
+
 module.exports={
     LoadAdmin,
     verifyAdmin,
@@ -163,5 +174,6 @@ module.exports={
     addUser,
     addNew,
     editUser,
-    verify
+    verify,
+    deleteUser
 }

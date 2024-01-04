@@ -53,6 +53,8 @@ admin_route.get('/edit-user',adminController.editUser);
 
 admin_route.post('/edit-user',adminController.verify);
 
+admin_route.get('/delete-user',auth.isLogin,adminController.deleteUser);
+
 admin_route.get('*',function(req,res){
     res.redirect('/admin');
 });
